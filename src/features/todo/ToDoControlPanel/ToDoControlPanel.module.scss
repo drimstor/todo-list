@@ -6,6 +6,14 @@
   grid-template-columns: 1fr 170px 150px;
   gap: 16px;
 
+  @include tablet {
+    grid-template-columns: 1fr;
+
+    > * {
+      margin: 0 auto;
+    }
+  }
+
   button {
     width: fit-content;
   }
