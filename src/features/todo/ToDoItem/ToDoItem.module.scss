@@ -1,0 +1,30 @@
+@use '/src/app/styles/helpers' as *;
+
+.globalBox {
+  width: 100%;
+  min-height: 50px;
+  border-radius: 7px;
+  background: white;
+  @extend %border;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px;
+
+  p {
+    width: 100%;
+  }
+}
+
+.iconsBox {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.editInput {
+  font-size: 16px;
+  margin-left: -1px;
+  color: $textColor;
+  width: 80%;
+}

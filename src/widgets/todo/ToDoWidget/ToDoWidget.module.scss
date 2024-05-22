@@ -1,0 +1,14 @@
+@use '/src/app/styles/helpers' as *;
+
+.globalBox {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 800px;
+  margin: 150px auto 0;
+
+  h1 {
+    font-size: 48px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,170 @@
+//------------- Цвета -------------//
+
+$primary: #626ff1;
+$secondary: #ecedf6;
+$background: #f8f9ff;
+$error: red;
+$textColor: #585858;
+
+//-------------- Mixins ---------------//
+
+@mixin text($f, $lh) {
+  font-size: $f;
+  line-height: $lh;
+}
+
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin mobile($isNot: false) {
+  @if $isNot {
+    @media screen and (min-width: 480px) {
+      @content;
+    }
+  } @else {
+    @media screen and (max-width: 480px) {
+      @content;
+    }
+  }
+}
+
+@mixin tablet($isNot: false) {
+  @if $isNot {
+    @media screen and (min-width: 769px) {
+      @content;
+    }
+  } @else {
+    @media screen and (max-width: 769px) {
+      @content;
+    }
+  }
+}
+
+@mixin laptop($isNot: false) {
+  @if $isNot {
+    @media screen and (min-width: 1200px) {
+      @content;
+    }
+  } @else {
+    @media screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+@mixin desktop($isNot: false) {
+  @if $isNot {
+    @media screen and (min-width: 1440px) {
+      @content;
+    }
+  } @else {
+    @media screen and (max-width: 1440px) {
+      @content;
+    }
+  }
+}
+
+@mixin fullhd($isNot: false) {
+  @if $isNot {
+    @media screen and (min-width: 1920px) {
+      @content;
+    }
+  } @else {
+    @media screen and (max-width: 1920px) {
+      @content;
+    }
+  }
+}
+
+//-------------- Extends ---------------//
+
+%defaultText {
+  font-size: 16px;
+  line-height: 150%;
+}
+
+%border {
+  box-shadow:
+    0 0 0 1px rgb(0 0 0 / 7%),
+    0 2px 4px rgb(0 0 0 / 5%),
+    0 3px 24px rgb(0 0 0 / 5%);
+}
+
+%skeletonPulse {
+  animation: skeletonPulse 2s ease-in-out infinite forwards;
+
+  @keyframes skeletonPulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+%scroll {
+  &::-webkit-scrollbar-track {
+    background-color: $secondary;
+    border-radius: 15px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary;
+    border-radius: 15px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 0px;
+  }
+}
+
+//-------------- Animations ---------------//
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    filter: blur(3px);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+@keyframes shake {
+  0% {
+    left: 0;
+  }
+
+  15% {
+    left: 10px;
+  }
+
+  30% {
+    left: -10px;
+  }
+
+  45% {
+    left: 10px;
+  }
+
+  60% {
+    left: -10px;
+  }
+
+  75% {
+    left: 10px;
+  }
+
+  90% {
+    left: 0;
+  }
+}

@@ -1,0 +1,12 @@
+@use '/src/app/styles/helpers' as *;
+
+.globalBox {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 170px 150px;
+  gap: 16px;
+
+  button {
+    width: fit-content;
+  }
+}

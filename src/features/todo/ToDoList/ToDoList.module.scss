@@ -1,0 +1,14 @@
+@use '/src/app/styles/helpers' as *;
+
+.globalBox {
+  width: 100%;
+  background: $secondary;
+  padding: 16px;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  @extend %scroll;
+  max-height: 600px;
+  overflow-y: auto;
+}
