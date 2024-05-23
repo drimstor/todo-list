@@ -1,7 +1,7 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import styles from './IconButton.module.scss'
 import { memo } from 'react'
+import styles from './IconButton.module.scss'
 
 interface iIconButton {
   icon: IconProp

@@ -1,11 +1,7 @@
-import { ReactNode } from 'react'
+import { ToDoListProps } from './model/types'
 import styles from './ToDoList.module.scss'
 
-interface IToDoList {
-  children: ReactNode
-}
-
-const ToDoList = ({ children }: IToDoList) => {
+const ToDoList = ({ children }: ToDoListProps) => {
   return <div className={styles.globalBox}>{children}</div>
 }
 

@@ -1,27 +1,27 @@
 import { faSortDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import clsx from 'clsx'
 import { memo, useRef, useState } from 'react'
-import styles from './Select.module.scss'
 import { useAppSelector } from 'app/store/lib/hooks/hooks'
+import { TypeFilter } from 'entities/todo/model/types'
 import useClickOutside from 'shared/lib/hooks/useClickOutside'
+import clsx from 'clsx'
+import styles from './Select.module.scss'
 
 interface iSelect {
   ul: string[]
-  onChange: (item: string) => void
+  onChange: (item: TypeFilter) => void
 }
 
 function Select({ ul, onChange }: iSelect) {
   const [isOpen, setisOpen] = useState(false)
   const filter = useAppSelector((state) => state.todos.filter)
   const listRef = useRef<HTMLDivElement>(null)
+  useClickOutside(listRef, () => setisOpen(false))
 
-  const handleClickItem = (item: string) => {
+  const handleClickItem = (item: TypeFilter) => {
     onChange(item)
     setisOpen(false)
   }
-
-  useClickOutside(listRef, () => setisOpen(false))
 
   return (
     <div className={styles.wrapper}>
@@ -36,7 +36,7 @@ function Select({ ul, onChange }: iSelect) {
 
       <ul className={clsx(styles.select, isOpen && styles.show)}>
         {ul.map((li, index) => (
-          <li key={index} className={styles.item} onClick={() => handleClickItem(li)}>
+          <li key={index} className={styles.item} onClick={() => handleClickItem(li as TypeFilter)}>
             {li}
           </li>
         ))}

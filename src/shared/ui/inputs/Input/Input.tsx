@@ -1,8 +1,8 @@
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { memo } from 'react'
 import clsx from 'clsx'
-import s from './Input.module.scss'
-import { ChangeEvent, memo } from 'react'
+import styles from './Input.module.scss'
 
 interface iInput {
   placeholder: string
@@ -14,10 +14,10 @@ interface iInput {
 
 function Input({ placeholder, icon, error, errorText, name }: iInput) {
   return (
-    <div className={clsx(error && s.error, s.inputWrapper)}>
+    <div className={clsx(error && styles.error, styles.inputWrapper)}>
       {!!icon && <FontAwesomeIcon icon={icon} />}
       <input placeholder={placeholder} type={'text'} name={name} />
-      <div className={s.errorText}>{errorText && errorText}</div>
+      <div className={styles.errorText}>{errorText && errorText}</div>
     </div>
   )
 }

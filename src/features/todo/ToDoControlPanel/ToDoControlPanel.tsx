@@ -1,17 +1,16 @@
-import Input from 'shared/ui/inputs/Input/Input'
 import styles from './ToDoControlPanel.module.scss'
-import Button from 'shared/ui/buttons/Button/Button'
 import { faList } from '@fortawesome/free-solid-svg-icons'
-import Select from 'shared/ui/select/Select/Select'
 import { FormEvent, memo, useCallback, useState } from 'react'
 import { addTodo, setFilter } from 'entities/todo/model/toDoSlice'
 import { useAppDispatch } from 'app/store/lib/hooks/hooks'
 import { filterList } from './lib/const'
+import { TypeFilter } from 'entities/todo/model/types'
+import { Button, Input, Select } from 'shared/ui'
 
 const ToDoControlPanel = () => {
   const dispatch = useAppDispatch()
 
-  const onChangeFilter = useCallback((item: string) => {
+  const onChangeFilter = useCallback((item: TypeFilter) => {
     dispatch(setFilter(item))
   }, [])
 
