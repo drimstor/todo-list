@@ -1,6 +1,6 @@
 import { useAppSelector } from 'app/store/lib/hooks/hooks'
 import { ToDoControlPanel, ToDoItem, ToDoList } from 'features/todo'
-import { useMemo } from 'react'
+import { FC, useMemo } from 'react'
 import { TypeFilterMap } from './model/types'
 import useDragAndDrop from './lib/hooks/useDragAndDrop'
 import styles from './ToDoWidget.module.scss'
